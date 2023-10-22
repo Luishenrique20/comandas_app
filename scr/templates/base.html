@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head class="home">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - AbcBolinhas</title>
+    {% block style %}{% endblock %}
+    <style>
+        .important {
+            color: #6495ED;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.3.2-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.4.2-web/css/all.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+
+<body class="home">
+    {% block menu %}
+    <ul>
+        <li><a href="{{ url_for('index.formIndex') }}"><i class="fas fa-home"></i> HOME</a></li>
+        <li><a href="{{ url_for('funcionario.formListaFuncionario') }}"><i
+                    class="fas fa-cart-arrow-down"></i>FUNCIONÁRIOS</a></li>
+        <li><a href="{{ url_for('cliente.formListaCliente') }}"><i class="fas fa-users"></i> CLIENTES</a></li>
+        <li><a href="{{ url_for('produto.formListaProduto') }}"><i class="fas fa-pizza-slice"></i> PRODUTOS</a></li>
+    </ul>
+    {% endblock %}
+    <div class="container-fluid mt-3">
+        {% block content %}{% endblock %}
+        <br><br><br>
+    </div>
+    {% block footer %}
+    <a href="{{ url_for('index.formIndex') }}">&copy; Luishenrique@abc</a>
+    {% endblock %}
+    {% block js %}{% endblock %}
+    <script src="{{ url_for('static', filename='bootstrap-5.3.2-dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='fontawesome-free-6.4.2-web/js/all.js') }}"></script>
+    <script src="{{ url_for('static', filename='seuArquivo.js') }}"></script>
+</body>
+
+</html>

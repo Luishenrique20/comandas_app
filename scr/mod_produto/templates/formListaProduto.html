@@ -1,3 +1,4 @@
+</html>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,8 +8,36 @@
 </head>
 
 <body>
-    <h1>Rota da página de Produto da nossa WEB APP</h1>
-    <h1>Uso de render_template</h1>
+    {% extends "base.html" %}
+    {% block title %}Produto{% endblock %}
+    {% block content %}
+    <form action="{{ url_for('produto.formProduto') }}" method="GEt">
+        <h1>Produto</h1>
+        <button type="submit" name="formNovo">Novo Produto</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">descricao</th>
+                <th scope="col">foto</th>
+                <th scope="col">valor_unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">...</th>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td><i class="fas fa-edit"></i></td>
+                <td><i class="fas fa-trash"></i></td>
+            </tr>
+        </tbody>
+    </table>
+    {% endblock %}
 </body>
 
 </html>

@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
 </head>
 
 <body>
-    <h1>Rota da página de index da nossa WEB APP</h1>
-    <h1>Uso de render_template</h1>
+    {% extends "base.html" %}
+
+    {% block title %}index{% endblock %}
+    
+    {% block content %}
+    <h1>index</h1>
+    <p class="important">Seja bem vindo!</p>
+    <ul>
+    <li><a href="{{ url_for('index.formIndex') }}">Home</a></li>
+    </ul>
+    {% endblock %}
+
 </body>
 
 </html>
